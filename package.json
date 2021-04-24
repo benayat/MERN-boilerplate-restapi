@@ -1,0 +1,21 @@
+{
+  "name": "weekend-mern-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd server && node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benayat/fullstack-boilerplate-restapi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benayat/fullstack-boilerplate-restapi/issues"
+  },
+  "homepage": "https://github.com/benayat/fullstack-boilerplate-restapi#readme"
+}
