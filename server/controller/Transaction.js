@@ -28,8 +28,10 @@ const create = async (req, res) => {
 };
 const getAll = async (req, res) => {
   try {
+    console.log("starting transaction");
     const transactions = await Transaction.find({});
-    res.status("201").send(clients);
+
+    res.status("201").send(transactions);
   } catch (e) {
     res.status(404).send(e);
   }

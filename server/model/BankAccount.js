@@ -5,10 +5,9 @@ const BankAccount = mongoose.model("bankaccount", {
     default: 0,
     validate: {
       validator: function (value) {
-        if (value > 0) {
+        if (value > 0 || this.balance === 0) {
           return true;
         } else {
-          console.log("running validator");
           return value >= -this.options.credit;
         }
       },

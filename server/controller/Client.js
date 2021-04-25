@@ -14,6 +14,7 @@ const create = async (req, res) => {
 };
 const getAll = async (req, res) => {
   try {
+    console.log("action: get all from client db");
     const clients = await Client.find({});
     res.status("201").send(clients);
   } catch (e) {
@@ -57,9 +58,11 @@ const deleteByPassportId = async (req, res) => {
   try {
     const session = await BankAccount.startSession();
     session.startTransaction();
-    const numberOfAccounts = await BankAccount.find({
-      belongsToPassportId: req.params.id,
-    });
+    const numberOfAccounts = (
+      await BankAccount.find({
+        belongsToPassportId: req.params.id,
+      })
+    ).length;
     const accountDeleteResult = await BankAccount.deleteMany({
       belongsToPassportId: req.params.id,
     });
