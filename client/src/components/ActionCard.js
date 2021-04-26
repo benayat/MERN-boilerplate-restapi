@@ -3,6 +3,7 @@ import plusIcon from "../images/plusIcon.png";
 import listIcon from "../images/listIcon.jfif";
 import { Link } from "react-router-dom";
 const ActionCard = (props) => {
+  const type = props.headline.split(" ").join("").toLowerCase();
   return (
     <div className="container">
       <div className="card">
@@ -14,12 +15,10 @@ const ActionCard = (props) => {
         </div>
         <div className="face face2">
           <div className="content">
-            <Link to="/add/:collection">
+            <Link to={`/add/${type.slice(0, -1)}`}>
               <img alt="add icon" src={plusIcon} />
             </Link>
-            <Link
-              to={`/list/${props.headline.split(" ").join("").toLowerCase()}`}
-            >
+            <Link to={`/list/${type}`}>
               <img alt="list" src={listIcon} />
             </Link>
           </div>

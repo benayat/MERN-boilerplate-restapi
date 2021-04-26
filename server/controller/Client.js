@@ -4,11 +4,12 @@ const Transaction = require("../model/Transaction");
 const assert = require("assert");
 const create = async (req, res) => {
   try {
+    console.log(req.body);
     let client = new Client(req.body);
     await client.save();
     res.status(201).send(client);
   } catch (e) {
-    console.log(e);
+    console.log(e.message);
     res.status(400).send(e);
   }
 };

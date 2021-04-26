@@ -1,5 +1,11 @@
 const mongoose = require("mongoose");
 const BankAccount = mongoose.model("bankaccount", {
+  belongsToPassportId: {
+    type: String,
+    required: true,
+    minLength: 9,
+    maxLength: 9,
+  },
   balance: {
     type: Number,
     default: 0,
@@ -22,12 +28,6 @@ const BankAccount = mongoose.model("bankaccount", {
   isActive: {
     type: Boolean,
     default: true,
-  },
-  belongsToPassportId: {
-    type: String,
-    required: true,
-    minLength: 9,
-    maxLength: 9,
   },
 });
 module.exports = BankAccount;

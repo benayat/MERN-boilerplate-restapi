@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import localForage from "localforage";
@@ -7,7 +7,6 @@ import Table from "../components/Table";
 import bankAccountIcon from "../images/bankAccountIcon.jpg";
 import clientIcon from "../images/clientIcon.png";
 import transactionIcon from "../images/transactionIcon.png";
-import homeIcon from "../images/homeIcon.png";
 const ListPage = (props) => {
   const [loaded, setLoaded] = useState(false);
   const [collection, setCollection] = useState(null);
@@ -31,11 +30,6 @@ const ListPage = (props) => {
 
   return (
     <div>
-      <div>
-        <Link to="/">
-          <img className="home" alt="home" src={homeIcon} />
-        </Link>
-      </div>
       <div className="aboveTable">
         <h1 className="listHeader">
           {collectionType.toUpperCase()} collection
