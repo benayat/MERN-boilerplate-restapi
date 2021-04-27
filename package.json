@@ -23,6 +23,8 @@
   "proxy": "http://localhost:5000",
   "dependencies": {
     "concurrently": "^6.0.2",
-    "localforage": "^1.9.0"
+    "localforage": "^1.9.0",
+    "react-signature-canvas": "^1.0.3",
+    "reactjs-popup": "^2.0.4"
   }
 }

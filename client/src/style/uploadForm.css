@@ -9,3 +9,8 @@
   position: relative;
   top: 1vh;
 }
+.collumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

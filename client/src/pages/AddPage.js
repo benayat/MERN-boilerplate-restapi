@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 const AddPage = ({ icons }) => {
   const objectType = useParams().collectionType;
   const [logoIconName, setLogoIconName] = useState(null);
+  const [inputChoise, setInputChoise] = useState("Keyboard");
 
   useEffect(() => {
     const loader = async () => {
@@ -13,6 +14,9 @@ const AddPage = ({ icons }) => {
     };
     loader();
   }, [objectType]);
+  const onValueChange = (e) => {
+    setInputChoise(e.target.value);
+  };
   return (
     objectType &&
     logoIconName && (
@@ -23,7 +27,29 @@ const AddPage = ({ icons }) => {
             return icons[logoIconName];
           })()}
         />
-        <UploadForm objectType={objectType} />
+        <div className="radio">
+          <label>
+            <input
+              type="radio"
+              value="Keyboard"
+              checked={inputChoise === "Keyboard"}
+              onChange={onValueChange}
+            />
+            Keyboard
+          </label>
+        </div>
+        <div className="radio">
+          <label>
+            <input
+              type="radio"
+              value="Pen"
+              checked={inputChoise === "Pen"}
+              onChange={onValueChange}
+            />
+            Pen
+          </label>
+        </div>
+        <UploadForm inputChoise={inputChoise} objectType={objectType} />
       </div>
     )
   );
